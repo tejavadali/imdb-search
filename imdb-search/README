@@ -1,0 +1,28 @@
+Compile :
+From the root-directory (where pom.xml lives), Run mvn clean install.
+
+Run :
+Goto root directory and Run `java -jar target/imdb-search-1.0.jar`
+
+
+Assumptions:
+1. Data is very small :
+	(a) I can build index during the booting of the App.
+	(b) I can store very granular level of indexing in the memory.
+
+2. Data is not updated: 
+	(a) If data is updated then we need a sofisticated mechanisam to update the indexes.
+	(b) If data is updated then we need to make the index data structre Thread safe.
+
+3. Not many concurrent requests :
+	(a) Right now, to do an AND operation (when query contains multiple terms) is slow. Sofisticated algorthm can make better choices to ignore some of the unecessary indexes.
+
+
+Improvements (for scaling):
+1. Build index incrementally.
+2. Cache results for frequently requested terms.
+3. Mutli Threaded crwaling (this is not necessary, but good to have).
+4. Currently I am using very simple Inverted Index technique to index the data. At a large scale, we might need to think of better approaches.
+
+
+
