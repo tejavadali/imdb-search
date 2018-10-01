@@ -4,6 +4,9 @@ From the root-directory (where pom.xml lives), Run mvn clean install.
 Run :
 Goto root directory and Run `java -jar target/imdb-search-1.0.jar`
 
+Test :
+The server runs on port 8080.
+http://localhost:8080/search?query=spielberg%20hanks
 
 Assumptions:
 1. Data is very small :
